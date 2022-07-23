@@ -27,9 +27,31 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'arrow-parens': [
+      'error',
+      'as-needed',
+      {
+        requireForBlockBody: false
+      }
+    ],
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/no-array-index-key': 'off',
     'react/prop-types': 'off',
-    '@typescript-eslint/no-use-before-define': ['error']
+    'react/react-in-jsx-scope': 'off',
+    'react/function-component-definition': 'off',
+    'react/self-closing-comp': ['error'],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true
+      }
+    ],
+    'no-unused-vars': 'warn',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off'
   }
 };
