@@ -27,13 +27,13 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
-    'arrow-parens': [
-      'error',
-      'as-needed',
-      {
-        requireForBlockBody: false
-      }
-    ],
+    // 'arrow-parens': [
+    //   'error',
+    //   'as-needed',
+    //   {
+    //     requireForBlockBody: false
+    //   }
+    // ],
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
     'react/jsx-props-no-spreading': 'off',
