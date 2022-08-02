@@ -36,11 +36,16 @@ module.exports = {
     // ],
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
+    'react/function-component-definition': [
+      'warn',
+      {
+        namedComponents: 'arrow-function'
+      }
+    ],
     'react/jsx-props-no-spreading': 'off',
     'react/no-array-index-key': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/function-component-definition': 'off',
     'react/self-closing-comp': ['error'],
     'import/no-extraneous-dependencies': [
       'error',
