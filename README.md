@@ -1,12 +1,71 @@
-# Getting Started with Create React App
+# Create React App Starter with Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Create React App starter project
 
+## Tech Stack
+
+- Bootstrapped with [`create-react-app`](https://github.com/facebook/create-react-app)
+- Create React App Override v6.5.4
+- React & React DOM v18
+- Type Checker - TypeScript v4.7.4
+- State Management - Redux Toolkit v1.8.3
+- Lint - ESlint v8, AirBnB & Eslint-config-next
+- Format - Prettier v2.7.1
+
+## Usage
+
+Inside the project directory run using `npm` or `yarn`:
+### Run
+
+```bash
+yarn dev
+# or
+npm run dev
+```
+
+Entry point `pages/index.tsx`.
+
+## Create React App Override - [CRACO](https://github.com/dilanx/craco)
+**C**reate **R**eact **A**pp **C**onfiguration **O**verride is a configuration layer for create-react-app.
+
+It allows all the benefits of create-react-app **and** customization without using 'eject' by adding a single configuration (e.g. `craco.config.js`) file at the root of your application and, in this case, customization of the `.eslintrc` in order to enable the use of Import Path Aliasing.
+
+### Current Configuration
+
+### `craco.config.js`
+
+```javascript
+...
+alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, './src/components/'),
+      '@pages': path.resolve(__dirname, './src/pages/'),
+    }
+...
+```
+
+### `tsconfig.paths.json`
+
+```javascript
+...
+"paths": {
+    "@/*": [
+      "./src/*"
+    ],
+    "@components/*": [
+      "./src/components/*"
+    ],
+    "@pages/*": [
+      "./src/pages/*"
+    ]
+  },
+...
+```
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` (from CRACO)
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +73,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm test` (from CRACO)
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `npm run build` (from CRACO)
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +88,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run eject` (from CRACO)
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
