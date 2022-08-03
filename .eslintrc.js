@@ -36,6 +36,12 @@ module.exports = {
     // ],
     'import/prefer-default-export': 'off',
     'no-use-before-define': 'off',
+    'jsx-a11y/label-has-associated-control': [
+      'warn',
+      {
+        assert: 'either'
+      }
+    ],
     'react/function-component-definition': [
       'warn',
       {
