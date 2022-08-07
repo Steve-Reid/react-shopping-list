@@ -1,5 +1,5 @@
 {
-  "name": "cra-starter",
+  "name": "animated-shopping-list",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,7 +22,7 @@
     ]
   },
   "dependencies": {
-    "@craco/craco": "^6.4.5",
+    "@craco/craco": "^7.0.0-alpha.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
