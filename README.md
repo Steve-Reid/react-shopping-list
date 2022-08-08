@@ -1,16 +1,22 @@
-# Create React App Starter with Redux
+# React Shopping List
 
-A Create React App starter project
+<img src="screenshots/screenshot.jpg" width="500">
+
+A simple SPA Shopping list app made using React TypeScript and Framer Motion
 
 ## Tech Stack
 
 - Bootstrapped with [`create-react-app`](https://github.com/facebook/create-react-app)
-- Create React App Override v6.5.4
-- React & React DOM v18
-- Type Checker - TypeScript v4.7.4
-- State Management - Redux Toolkit v1.8.3
-- Lint - ESlint v8, AirBnB & Eslint-config-next
-- Format - Prettier v2.7.1
+- [Create React App Override](https://github.com/dilanx/craco) v6.5.4
+- [React & React DOM](https://reactjs.org) v18
+- [Framer Motion](https://www.framer.com/motion/) v7
+- [React Icons](https://react-icons.github.io/react-icons/) v4.4
+- Type Checker - [TypeScript](https://www.typescriptlang.org) v4.7.4
+- Lint - [ESlint](https://eslint.org) v8 & [AirBnB](https://airbnb.io/javascript/)
+- Format - [Prettier](https://prettier.io) v2.7.1
+
+## Storage
+For this app, list item are saved on the browser's local storage.
 
 ## Usage
 
@@ -18,12 +24,41 @@ Inside the project directory run using `npm` or `yarn`:
 ### Run
 
 ```bash
-yarn dev
+yarn start
 # or
-npm run dev
+npm run start
 ```
 
-Entry point `pages/index.tsx`.
+Entry point `index.tsx`.
+
+App will appear in the browser at http://localhost:3000
+
+## Animations
+A number of animations have been implemented in the app
+
+### On page load
+- Fade in of title and item input.
+- Staggered fade in of existing list items.
+- line draw in of bag svg icon.
+
+<img src="screenshots/staggered-list-screenshot.gif" width="500">
+
+## On adding a new item
+- Fade in when added to list.
+- Move down to make room for new item fading in.
+
+<img src="screenshots/new-item-screenshot.gif" width="500">
+
+## On removing an item
+- Fade out on removal from list.
+- Move up into space vacated by removed item.
+
+<img src="screenshots/hover-delete-screenshot.gif" width="500">
+
+### On click and drag
+- List items reorder themselves accordingly.
+
+<img src="screenshots/drag-screenshot.gif" width="500">
 
 ## Create React App Override - [CRACO](https://github.com/dilanx/craco)
 **C**reate **R**eact **A**pp **C**onfiguration **O**verride is a configuration layer for create-react-app.
