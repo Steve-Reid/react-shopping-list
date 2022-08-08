@@ -45,7 +45,7 @@ const ShoppingList = () => {
         Shopping List
       </motion.h1>
       <ListForm onSubmit={addListItem} />
-      <List items={items} removeItem={removeItem} />
+      <List items={items} removeItem={removeItem} reOrderList={setItems} />
     </div>
   );
 };

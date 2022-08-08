@@ -1,11 +1,12 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { ListItem } from '../types';
 
 interface ListProps {
   items: ListItem[];
   removeItem: (id: number) => void;
+  reOrderList: React.Dispatch<React.SetStateAction<ListItem[]>>;
 }
 
 const itemVariants = {
@@ -17,16 +18,19 @@ const itemVariants = {
 };
 
 // eslint-disable-next-line arrow-body-style
-const List = ({ items, removeItem }: ListProps) => {
+const List = ({ items, removeItem, reOrderList }: ListProps) => {
   return (
     <div>
-      <ul
-        // className="ul-portal"
+      <Reorder.Group
+        axis="y"
+        values={items}
+        onReorder={reOrderList}
         style={{ display: 'flex', flexDirection: 'column', flex: 2 }}
       >
         <AnimatePresence>
           {items.map((item: ListItem, index) => (
-            <motion.li
+            <Reorder.Item
+              value={item}
               className="list-row"
               variants={itemVariants}
               initial="hidden"
@@ -45,10 +49,10 @@ const List = ({ items, removeItem }: ListProps) => {
                   className="delete-icon"
                 />
               </div>
-            </motion.li>
+            </Reorder.Item>
           ))}
         </AnimatePresence>
-      </ul>
+      </Reorder.Group>
     </div>
   );
 };
