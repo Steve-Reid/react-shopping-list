@@ -33,6 +33,8 @@ const List = ({ items, removeItem }: ListProps) => {
               animate="visible"
               exit="hidden"
               custom={(index + 1) * 0.2}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.1 }}
               layoutId={`${item.id}`}
               key={item.id}
             >
