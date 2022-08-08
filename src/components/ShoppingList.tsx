@@ -11,7 +11,10 @@ const ShoppingList = () => {
     const storedItems: ListItem[] = JSON.parse(
       localStorage.getItem('items') || '""'
     );
-    if (storedItems) setItems(storedItems);
+
+    if (storedItems.length) {
+      setItems(storedItems);
+    }
   }, []);
 
   useEffect(() => {

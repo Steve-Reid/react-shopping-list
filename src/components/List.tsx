@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { ListItem } from '../types';
 
@@ -24,23 +24,26 @@ const List = ({ items, removeItem }: ListProps) => {
         // className="ul-portal"
         style={{ display: 'flex', flexDirection: 'column', flex: 2 }}
       >
-        {items.map((item: ListItem) => (
-          <motion.li
-            className="list-row"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
-            key={item.id}
-          >
-            <div>{item.text}</div>
-            <div className="icons">
-              <RiCloseCircleLine
-                onClick={() => removeItem(item.id)}
-                className="delete-icon"
-              />
-            </div>
-          </motion.li>
-        ))}
+        <AnimatePresence>
+          {items.map((item: ListItem) => (
+            <motion.li
+              className="list-row"
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              key={item.id}
+            >
+              <div>{item.text}</div>
+              <div className="icons">
+                <RiCloseCircleLine
+                  onClick={() => removeItem(item.id)}
+                  className="delete-icon"
+                />
+              </div>
+            </motion.li>
+          ))}
+        </AnimatePresence>
       </ul>
     </div>
   );
