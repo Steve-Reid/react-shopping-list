@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
+import Bag from './components/Bag';
+import ShoppingList from './components/ShoppingList';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <h1>Create React App Starter</h1>
-    </header>
-  </div>
+  <>
+    <Bag />
+    <div className="list-app">
+      <ShoppingList />
+    </div>
+  </>
 );
 
 export default App;
