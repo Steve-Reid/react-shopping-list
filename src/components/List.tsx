@@ -10,10 +10,10 @@ interface ListProps {
 
 const itemVariants = {
   hidden: { opacity: 0 },
-  visible: {
+  visible: (custom: number) => ({
     opacity: 1,
-    transition: { duration: 1 }
-  }
+    transition: { delay: custom }
+  })
 };
 
 // eslint-disable-next-line arrow-body-style
@@ -25,13 +25,14 @@ const List = ({ items, removeItem }: ListProps) => {
         style={{ display: 'flex', flexDirection: 'column', flex: 2 }}
       >
         <AnimatePresence>
-          {items.map((item: ListItem) => (
+          {items.map((item: ListItem, index) => (
             <motion.li
               className="list-row"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
               exit="hidden"
+              custom={(index + 1) * 0.2}
               layoutId={`${item.id}`}
               key={item.id}
             >
