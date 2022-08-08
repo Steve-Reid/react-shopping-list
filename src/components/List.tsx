@@ -32,6 +32,7 @@ const List = ({ items, removeItem }: ListProps) => {
               initial="hidden"
               animate="visible"
               exit="hidden"
+              layoutId={`${item.id}`}
               key={item.id}
             >
               <div>{item.text}</div>
